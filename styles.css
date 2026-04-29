@@ -1,0 +1,144 @@
+/* ------------------------------
+   GLOBAL STYLES
+------------------------------ */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #1a1a1a;
+    color: #e6e6e6;
+    line-height: 1.6;
+}
+
+/* ------------------------------
+   HEADER
+------------------------------ */
+header {
+    background: linear-gradient(90deg, #2b2b2b, #1a1a1a);
+    padding: 25px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    border-bottom: 3px solid #444;
+    color: #cfcfcf;
+}
+
+/* ------------------------------
+   NAVIGATION
+------------------------------ */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #262626;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    border-bottom: 2px solid #333;
+}
+
+nav ul li a {
+    color: #d4d4d4;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #444;
+    color: #fff;
+}
+
+/* ------------------------------
+   SECTION STYLING
+------------------------------ */
+section {
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 800px;
+    background: #222;
+    border-radius: 10px;
+    border: 1px solid #333;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+section h2 {
+    color: #bfbfbf;
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
+}
+
+/* ------------------------------
+   LISTS
+------------------------------ */
+ul, ol {
+    padding-left: 25px;
+}
+
+ul li, ol li {
+    margin: 8px 0;
+}
+
+/* ------------------------------
+   FORM
+------------------------------ */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border-radius: 6px;
+    border: 1px solid #555;
+    background: #1a1a1a;
+    color: #e6e6e6;
+}
+
+form button {
+    padding: 10px 20px;
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    background: #666;
+}
+
+/* ------------------------------
+   LINKS
+------------------------------ */
+a {
+    color: #9ecbff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: #111;
+    color: #777;
+    border-top: 2px solid #333;
+}
