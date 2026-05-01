@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Corbin Simplicio Profile Card</title>
+  <style>
+    /* === Page background and centering === */
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top, #2b1a0f 0, #0b0503 55%, #000 100%);
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+
+    /* === Profile card container === */
+    .profile-card {
+      /* Padding: inner spacing so content can breathe */
+      padding: 24px 28px;
+      width: 320px;
+      background: linear-gradient(145deg, #3b2615 0%, #1b1009 40%, #4a321c 100%);
+      color: #fdf5d9;
+      border-radius: 18px;
+
+      /* Scrollwork-style border using double + outline + shadow */
+      border: 3px double #f4c96b;
+      box-shadow:
+        0 0 0 2px rgba(255, 215, 128, 0.4),
+        0 18px 35px rgba(0, 0, 0, 0.7);
+
+      /* Subtle inner glow */
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative scrollwork corners using pseudo-elements */
+    .profile-card::before,
+    .profile-card::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border: 2px solid rgba(244, 201, 107, 0.7);
+      border-radius: 40% 60% 40% 60%;
+      filter: blur(0.3px);
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .profile-card::before {
+      top: -30px;
+      left: -30px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .profile-card::after {
+      bottom: -30px;
+      right: -30px;
+      border-left: none;
+      border-top: none;
+    }
+
+    /* === Name styling === */
+    .profile-name {
+      margin: 0 0 8px;
+      font-size: 1.4rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #ffe9a3;
+      text-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
+    }
+
+    /* === Subtle divider line === */
+    .divider {
+      height: 1px;
+      margin: 8px 0 14px;
+      background: linear-gradient(
+        90deg,
+        transparent 0,
+        rgba(255, 215, 128, 0.2) 20%,
+        rgba(255, 215, 128, 0.8) 50%,
+        rgba(255, 215, 128, 0.2) 80%,
+        transparent 100%
+      );
+    }
+
+    /* === Description text === */
+    .profile-description {
+      margin: 0 0 18px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #f9e7c0;
+    }
+
+    /* === Button styling (RGBIC + regal) === */
+    .monkey-button {
+      width: 100%;
+      padding: 10px 14px; /* padding inside button */
+      border-radius: 999px;
+      border: 2px solid #f4c96b;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+
+      /* RGBIC gradient for the button background */
+      background: linear-gradient(
+        120deg,
+        #ff4b5c,
+        #ffb347,
+        #ffe53b,
+        #3fe0d0,
+        #7b5cff,
+        #ff4b5c
+      );
+      background-size: 300% 300%;
+      color: #1b1009;
+      box-shadow:
+        0 0 12px rgba(255, 215, 128, 0.7),
+        0 8px 18px rgba(0, 0, 0, 0.7);
+      transition:
+        transform 0.12s ease-out,
+        box-shadow 0.12s ease-out,
+        background-position 0.8s ease-out;
+    }
+
+    .monkey-button:hover {
+      transform: translateY(-1px);
+      background-position: 100% 0;
+      box-shadow:
+        0 0 16px rgba(255, 215, 128, 0.9),
+        0 10px 22px rgba(0, 0, 0, 0.85);
+    }
+
+    .monkey-button:active {
+      transform: translateY(1px) scale(0.98);
+      box-shadow:
+        0 0 8px rgba(255, 215, 128, 0.7),
+        0 4px 12px rgba(0, 0, 0, 0.8);
+    }
+
+    /* === Monkey rain container === */
+    .monkey-rain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none; /* so clicks pass through */
+      overflow: hidden;
+      z-index: 9999;
+    }
+
+    /* Individual monkey emoji drop */
+    .monkey {
+      position: absolute;
+      font-size: 2rem;
+      animation: fall 2.4s linear forwards;
+      text-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Falling animation */
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Monkey rain overlay (empty at start, JS will fill it) -->
+  <div class="monkey-rain" id="monkeyRain"></div>
+
+  <!-- === Profile Card === -->
+  <div class="profile-card">
+    <h1 class="profile-name">Corbin Simplicio</h1>
+    <div class="divider"></div>
+    <p class="profile-description">
+      AI-centric software engineering student, hands-on repair and fabrication specialist,
+      and ceremonial systems designer who blends code, craft, and cosmology into practical tools
+      for community and story.
+    </p>
+
+    <!-- Button that triggers monkey rain -->
+    <button class="monkey-button" id="monkeyButton">
+      Rain Monkeys
+    </button>
+  </div>
+
+  <script>
+    // === Monkey rain logic ===
+    const monkeyButton = document.getElementById("monkeyButton");
+    const monkeyRain = document.getElementById("monkeyRain");
+
+    // Helper: create a single falling monkey
+    function createMonkey() {
+      const span = document.createElement("span");
+      span.classList.add("monkey");
+
+      // Monkey emoji (you can swap for different ones)
+      span.textContent = "🐒";
+
+      // Random horizontal position across the viewport
+      const x = Math.random() * 100; // percentage
+      span.style.left = x + "vw";
+
+      // Slight random delay so they don't all fall in a perfect line
+      const delay = Math.random() * 0.8;
+      span.style.animationDelay = delay + "s";
+
+      monkeyRain.appendChild(span);
+
+      // Remove element after animation ends to avoid DOM bloat
+      span.addEventListener("animationend", () => {
+        span.remove();
+      });
+    }
+
+    // When button is pressed, spawn a burst of monkeys
+    monkeyButton.addEventListener("click", () => {
+      const count = 25; // number of monkeys per click
+      for (let i = 0; i < count; i++) {
+        createMonkey();
+      }
+    });
+  </script>
+</body>
+</html>
