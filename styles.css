@@ -6,8 +6,9 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     background: #1a1a1a;
-    color: #e6e6e6;
+    color: gold;
     line-height: 1.6;
+    text-shadow: 3cap 3px 6px rgba(0,0,0,0.3);
 }
 body {
     margin: 0;
@@ -15,7 +16,7 @@ body {
     font-family: Arial, sans-serif;
     background: url("Monkey-background.png") no-repeat center center fixed;
     background-size: cover;
-    color: #e6e6e6;
+    color: gold;
     line-height: 1.6;
 }
 
@@ -30,7 +31,7 @@ header {
     font-size: 2rem;
     font-weight: bold;
     border-bottom: 3px solid #444;
-    color: #cfcfcf;
+    color: gold;
 }
 
 /* ------------------------------
@@ -45,11 +46,11 @@ nav ul {
     justify-content: center;
     gap: 20px;
     padding: 15px;
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid rebeccapurple;
 }
 
 nav ul li a {
-    color: #d4d4d4;
+    color: gold;
     text-decoration: none;
     font-weight: bold;
     padding: 8px 12px;
@@ -59,7 +60,7 @@ nav ul li a {
 
 nav ul li a:hover {
     background: #444;
-    color: #fff;
+    color: gold;
 }
 
 /* ------------------------------
@@ -76,8 +77,8 @@ section {
 }
 
 section h2 {
-    color: #bfbfbf;
-    border-bottom: 2px solid #444;
+    color: gold;
+    border-bottom: 2px solid rebeccapurple;
     padding-bottom: 5px;
 }
 
