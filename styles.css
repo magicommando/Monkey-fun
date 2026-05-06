@@ -13,13 +13,35 @@ body {
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family:cursive, sans-serif;
     background: url("Monkey-background.png") no-repeat center center fixed;
     
     background-size: cover;
-    color: gold;
+    color: black;
     line-height: 1.6;
 
+}
+#first {
+    background: linear-gradient(90deg, #ffcc00, #ff6699, #66ccff);
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.box {
+    background: linear-gradient(145deg, gold 0%, yellow 40%, orange 100%);
+    border: 2px solid brown;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+img {
+    border: 2px solid gold;
+    border-radius: 120px;
+    margin-top: 20px;
 }
 
 
@@ -27,13 +49,13 @@ body {
    HEADER
 ------------------------------ */
 header {
-    background: linear-gradient(90deg, #2b2b2b, #1a1a1a);
+    background: linear-gradient(145deg, gold 0%, yellow 40%, orange 100%);
     padding: 25px;
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
     border-bottom: 3px solid #444;
-    color: gold;
+    color: dark brown;
 }
 
 /* ------------------------------
@@ -48,7 +70,7 @@ nav ul {
     justify-content: center;
     gap: 20px;
     padding: 15px;
-    border-bottom: 2px solid rebeccapurple;
+    border-bottom: 2px solid gold;
 }
 
 nav ul li a {
@@ -63,6 +85,37 @@ nav ul li a {
 nav ul li a:hover {
     background: #444;
     color: gold;
+}
+/* Flex container for all nav boxes */
+.nav-boxes {
+    display: flex;
+    flex-wrap: wrap;          /* allows wrapping to next line */
+    gap: 16px;                /* spacing between boxes */
+    padding: 20px;
+    justify-content: center;  /* centers the boxes */
+}
+
+/* Individual nav boxes */
+.nav-item {
+    display: block;
+    padding: 14px 20px;
+    background: linear-gradient(145deg, #3b2615, #1b1009);
+    border: 3px double gold;
+    border-radius: 12px;
+    color: #ffe9a3;
+    text-decoration: none;
+    font-weight: 600;
+    width: 220px;             /* makes all boxes same width */
+    text-align: center;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Hover effect */
+.nav-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(255,215,128,0.4);
+    color: #ffe53b;
 }
 
 /* ------------------------------
@@ -114,15 +167,25 @@ form input {
     border-radius: 6px;
     border: 1px solid #555;
     background: #1a1a1a;
-    color: #e6e6e6;
+    color: gold;
 }
 
 form button {
-    padding: 10px 20px;
-    background: #444;
-    color: #fff;
+    padding: 20px 30px;
+    background: gold;
+    color: black;
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+button {
+    padding: 20px 30px;
+    background: gold;
+    color: black;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
     transition: 0.3s ease;
@@ -130,6 +193,9 @@ form button {
 
 form button:hover {
     background: #666;
+    color: gold;   
+    padding: 12px 24px;
+    font-weight: bold;
 }
 
 /* ------------------------------
@@ -138,6 +204,9 @@ form button:hover {
 a {
     color: black;
     text-decoration: none;
+    font-weight: bold;
+    font-family: cursive;
+    font-style: italic;
 }
 
 a:hover {
