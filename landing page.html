@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monkey Kingdom Landing Page</title>
+
+  <style>
+    /* === GLOBAL RESET & BASE STYLING === */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: radial-gradient(circle at top, #1a0d05 0%, #000 100%);
+      color: #fdf5d9;
+      overflow-x: hidden;
+    }
+
+    /* === NAVIGATION BAR === */
+    nav {
+      /* Flexbox layout for horizontal alignment */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      background: linear-gradient(90deg, #3b2615, #1b1009);
+      border-bottom: 3px double #f4c96b;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Logo or title on the left */
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #ffe9a3;
+      text-shadow: 0 0 6px rgba(255, 215, 128, 0.8);
+    }
+
+    /* Navigation links on the right */
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #f9e7c0;
+      font-weight: 600;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffe53b;
+      text-shadow: 0 0 8px rgba(255, 215, 128, 0.8);
+    }
+
+    /* === HERO SECTION === */
+    .hero {
+      /* Flexbox centers content vertically and horizontally */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(145deg, #3b2615 0%, #1b1009 60%, #4a321c 100%);
+      border-bottom: 3px double #f4c96b;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      color: #ffe9a3;
+      text-shadow: 0 0 10px rgba(255, 215, 128, 0.8);
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      color: #f9e7c0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* === BUTTONS (RGBIC + GOLD THEME) === */
+    .button-group {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero-button {
+      padding: 12px 24px;
+      border-radius: 999px;
+      border: 2px solid #f4c96b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      font-size: 0.9rem;
+
+      /* RGBIC gradient background */
+      background: linear-gradient(
+        120deg,
+        #ff4b5c,
+        #ffb347,
+        #ffe53b,
+        #3fe0d0,
+        #7b5cff,
+        #ff4b5c
+      );
+      background-size: 300% 300%;
+      color: #1b1009;
+      box-shadow: 0 0 12px rgba(255, 215, 128, 0.7);
+      transition: background-position 0.8s ease, transform 0.2s ease;
+    }
+
+    .hero-button:hover {
+      background-position: 100% 0;
+      transform: translateY(-2px);
+      box-shadow: 0 0 16px rgba(255, 215, 128, 0.9);
+    }
+
+    /* === FLEXBOX FEATURE SECTIONS === */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 60px 40px;
+      background: #1b1009;
+    }
+
+    .feature {
+      flex: 1 1 280px; /* flexible width */
+      background: linear-gradient(145deg, #3b2615, #4a321c);
+      border: 3px double #f4c96b;
+      border-radius: 16px;
+      padding: 24px;
+      color: #f9e7c0;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(255, 215, 128, 0.3);
+    }
+
+    .feature h2 {
+      color: #ffe9a3;
+      margin-bottom: 12px;
+      text-shadow: 0 0 6px rgba(255, 215, 128, 0.8);
+    }
+
+    .feature p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* === FOOTER === */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(90deg, #3b2615, #1b1009);
+      border-top: 3px double #f4c96b;
+      color: #f9e7c0;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- === NAVIGATION BAR === -->
+  <nav>
+    <div class="logo">🐒 Monkey Kingdom</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- === HERO SECTION === -->
+  <section class="hero" id="home">
+    <h1>Welcome to the Golden Monkey Kingdom</h1>
+    <p>
+      Step into a realm of creativity and code, where monkeys rule with wisdom,
+      gold gleams in every corner, and RGBIC lights dance across the throne room.
+    </p>
+
+    <div class="button-group">
+      <button class="hero-button">Join the Troop</button>
+      <button class="hero-button">View Projects</button>
+      <button class="hero-button">Banana Shop</button>
+    </div>
+  </section>
+
+  <!-- === FLEXBOX FEATURES SECTION === -->
+  <section class="features" id="features">
+    <div class="feature">
+      <h2>🛠 Craftsmanship</h2>
+      <p>
+        From 3D printing to mechanical design, every artifact is forged with
+        precision and ceremonial care worthy of the Monkey King’s forge.
+      </p>
+    </div>
+
+    <div class="feature">
+      <h2>💻 Code & Ceremony</h2>
+      <p>
+        HTML, CSS, and JavaScript blend with ancestral rhythm—each line of code
+        a chant, each function a ritual of creation.
+      </p>
+    </div>
+
+    <div class="feature">
+      <h2>👑 Regal Design</h2>
+      <p>
+        Gold scrollwork borders, radiant gradients, and playful monkey motifs
+        make every page shine with royal energy.
+      </p>
+    </div>
+  </section>
+
+  <!-- === FOOTER === -->
+  <footer>
+    © 2026 Monkey Kingdom — Crafted by Corbin Simplicio 🐒
+  </footer>
+</body>
+</html>
