@@ -31,6 +31,25 @@ body {
     font-weight: bold;
     text-decoration: none;
 }
+.profile-card {
+    padding: 24px 28px;
+    width: 320px;
+    background: linear-gradient(145deg, gold 0%, yellow 40%, orange 100%);
+    color: black;
+    border-radius: 18px;
+    border: 2px solid brown;
+    margin: 20px auto;
+    text-align: center;
+    font-weight: bold;
+    border: 3px double #f4c96b;
+      box-shadow:
+        0 0 0 2px rgba(255, 215, 128, 0.4),
+        0 18px 35px rgba(0, 0, 0, 0.7);
+
+      /* Subtle inner glow */
+      position: relative;
+      overflow: hidden;
+}
 .box {
     background: linear-gradient(145deg, gold 0%, yellow 40%, orange 100%);
     border: 2px solid brown;
